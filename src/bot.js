@@ -5,10 +5,6 @@ var client = new Twitter({
   consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
   access_token_key: process.env.TWITTER_ACCESS_TOKEN_KEY,
   access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
-  // consumer_key: 'fIqWwuWZEKXgD3N7irZVG1f51',
-  // consumer_secret: 'HzduJnbAQ2iit8Ps2z1nPzVA7aQhCqaXa8H1kicoS2ePLADcyp',
-  // access_token_key: '3057790631-W15eo7TnqNi0k0hcC7VatdrK8RUjYrFuRUpLiiG',
-  // access_token_secret: '0YIyQY9p0tkIKOzTbObfmd6rWtzDYBpcpIsZzRfpwOuIf'
 });
  
 var params = {screen_name: 'featsof'};
@@ -22,7 +18,7 @@ client.get('statuses/user_timeline', params, function(error, tweets, response) {
 
 
 var fs = require("fs");
-var text = fs.readFileSync("./kingtuts.txt").toString('utf-8');
+var text = fs.readFileSync("../resources/bands.txt").toString('utf-8');
 var vowels = ["a","e","i","o","u"];
 var words = text.split(/[ :;?!~,`"&|()<>{}\[\]\r\n/\\]+/);
 var structures = [];
