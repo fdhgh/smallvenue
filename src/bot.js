@@ -145,7 +145,7 @@ app.listen(app.get('port'), function() {
 
 // source: https://stackoverflow.com/questions/4455282/call-a-javascript-function-at-a-specific-time-of-day
 var now = new Date();
-var millisTillTime = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 17, 0, 0, 0) - now;
+var millisTillTime = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 18, 30, 0, 0) - now;
 if (millisTillTime < 0) {
      millisTillTime += 86400000; // it's after 10am, try 10am tomorrow.
 }
