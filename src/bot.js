@@ -1,4 +1,8 @@
+var express = require('express');
 var Twitter = require('twitter');
+ 
+var app = express();
+app.set('port', process.env.PORT || 5000); 
  
 var client = new Twitter({
   consumer_key: process.env.TWITTER_CONSUMER_KEY,
@@ -135,6 +139,9 @@ function toTitleCase(str) {
 	);
 }
 
+app.listen(app.get('port'), function() {
+  console.log('Bot is running on port', app.get('port'));
+});
 
 // source: https://stackoverflow.com/questions/4455282/call-a-javascript-function-at-a-specific-time-of-day
 var now = new Date();
