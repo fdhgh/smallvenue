@@ -1,3 +1,5 @@
+// prints a bill to the console log
+
 var Twitter = require('twitter');
  
 var client = new Twitter({
@@ -8,11 +10,7 @@ var client = new Twitter({
 });
  
 var params = {screen_name: 'finevenue'};
-client.get('statuses/user_timeline', params, function(error, tweets, response) {
-  if (!error) {
-    console.log(tweets);
-  }
-});
+
 
 
 
@@ -107,6 +105,7 @@ function createBand() {
 	return name;
 }
 
+
 function randNumber(max) {
 	return  Math.floor((Math.random() * (max)));
 }
@@ -144,24 +143,8 @@ function toTitleCase(str) {
 }
 
 
-// source: https://stackoverflow.com/questions/4455282/call-a-javascript-function-at-a-specific-time-of-day
-var now = new Date();
-var millisTillTime = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 16, 20, 0, 0) - now;
-if (millisTillTime < 0) {
-     millisTillTime += 86400000; // it's after 10am, try 10am tomorrow.
-}
-setTimeout(function(){makeTweet();}, millisTillTime);
-
-function makeTweet(){
-	var statustext = createBill();
-
-	client.post('statuses/update', {status: statustext},  function(error, tweet, response) {
-	  if(error) throw error;
-	  console.log(tweet);  // Tweet body.
-	  console.log(response);  // Raw response object.
-	});
-	
-};
+var statusText = createBill();
+console.log(statusText);
 
 
 
