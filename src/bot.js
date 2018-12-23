@@ -18,7 +18,7 @@ client.get('statuses/user_timeline', params, function(error, tweets, response) {
 
 
 var fs = require("fs");
-var text = fs.readFileSync("../resources/bands.txt").toString('utf-8');
+var text = fs.readFileSync("resources/bands.txt").toString('utf-8');
 var vowels = ["a","e","i","o","u"];
 var words = text.split(/[ :;?!~,`"&|()<>{}\[\]\r\n/\\]+/);
 var structures = [];
