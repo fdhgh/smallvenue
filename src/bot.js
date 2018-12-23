@@ -8,14 +8,6 @@ var client = new Twitter({
 });
  
 var params = {screen_name: 'finevenue'};
-client.get('statuses/user_timeline', params, function(error, tweets, response) {
-  if (!error) {
-    console.log(tweets);
-  }
-});
-
-
-
 
 var fs = require("fs");
 var text = fs.readFileSync("resources/bands.txt").toString('utf-8');
@@ -146,7 +138,7 @@ function toTitleCase(str) {
 
 // source: https://stackoverflow.com/questions/4455282/call-a-javascript-function-at-a-specific-time-of-day
 var now = new Date();
-var millisTillTime = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 16, 20, 0, 0) - now;
+var millisTillTime = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 16, 25, 0, 0) - now;
 if (millisTillTime < 0) {
      millisTillTime += 86400000; // it's after 10am, try 10am tomorrow.
 }
