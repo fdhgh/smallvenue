@@ -4,7 +4,7 @@
   "description": "a bot for twitter to learn",
   "main": "bot.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node src/bot.js"
   },
   "author": "",
   "license": "ISC",
