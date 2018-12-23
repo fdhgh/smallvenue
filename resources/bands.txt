@@ -104,6 +104,8 @@ Island
 Franky
 Evil
 Party
+wanderer
+wonder
 Cat
 Glass
 Saint
@@ -144,6 +146,7 @@ Dancing
 dance
 hand
 Table
+maid
 Made 
 Mannequin
 Yonder
