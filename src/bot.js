@@ -140,13 +140,27 @@ function toTitleCase(str) {
 	);
 }
 
-var statustext = createBill();
 
-client.post('statuses/update', {status: statustext},  function(error, tweet, response) {
-  if(error) throw error;
-  console.log(tweet);  // Tweet body.
-  console.log(response);  // Raw response object.
-});
+// source: https://stackoverflow.com/questions/4455282/call-a-javascript-function-at-a-specific-time-of-day
+var now = new Date();
+var millisTillTime = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 16, 20, 0, 0) - now;
+if (millisTillTime < 0) {
+     millisTillTime += 86400000; // it's after 10am, try 10am tomorrow.
+}
+setTimeout(function(){makeTweet();}, millisTillTime);
+
+function makeTweet(){
+	var statustext = createBill();
+
+	client.post('statuses/update', {status: statustext},  function(error, tweet, response) {
+	  if(error) throw error;
+	  console.log(tweet);  // Tweet body.
+	  console.log(response);  // Raw response object.
+	});
+	
+};
+
+
 
 
 
